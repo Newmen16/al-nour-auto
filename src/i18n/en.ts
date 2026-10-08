@@ -1,0 +1,147 @@
+interface Step {
+  title: string;
+  text: string;
+}
+
+export const en = {
+  meta: {
+    title: "Al-Nour Auto | New Chinese cars and Mourabaha financing in Algeria",
+    description:
+      "Geely, Chery, Jetour, Baic, Changan, DFSK. Indicative prices in DZD, a Mourabaha simulator, delivery to all 58 wilayas.",
+  },
+  nav: {
+    stock: "Stock",
+    financing: "Financing",
+    how: "How it works",
+    request: "Request a quote",
+    menu: "Open menu",
+    closeMenu: "Close menu",
+    langAria: "التبديل إلى العربية",
+    brandLine: "New cars, Algerian roads",
+  },
+  hero: {
+    headline: "New Chinese cars. Mourabaha financing. Delivered nationwide.",
+    sub: "Six brands in stock, monthly payments from a 20% down payment, and a warranty of up to five years.",
+    request: "Request a quote",
+    browse: "Browse stock",
+    studioHint: "Move your cursor, the studio follows",
+  },
+  catalog: {
+    title: "Cars in stock",
+    sub: "Indicative prices in dinars, taxes included, confirmed at the showroom.",
+    all: "All brands",
+    sheet: "Spec sheet",
+    simulate: "Simulate payment",
+    price: "Price",
+    body: "Body",
+    dzd: "DZD",
+    count: (n: number) => `${n} model${n > 1 ? "s" : ""}`,
+    empty: "No model listed for this brand yet.",
+    closeSheet: "Close spec sheet",
+  },
+  specs: {
+    powertrain: "Powertrain",
+    practical: "Everyday use",
+    warranty: "Warranty",
+    engine: "Engine",
+    power: "Power",
+    transmission: "Transmission",
+    fuel: "Fuel",
+    consumption: "Combined consumption",
+    seats: "Seats",
+    drivetrain: "Drive",
+    body: "Body",
+    coverage: "Coverage",
+    mileage: "Mileage limit",
+    petrol: "Petrol",
+    l100: "L/100 km",
+    hp: "hp",
+    years: "years",
+    km: "km",
+    bodies: {
+      sedan: "Sedan",
+      suv: "SUV",
+      "coupe-suv": "Coupe SUV",
+      offroad: "Off-road",
+      utility: "Commercial",
+    },
+  },
+  sim: {
+    title: "Payment simulator",
+    sub: "Move the sliders until the monthly figure fits your budget. The full cost stays on screen.",
+    price: "Vehicle price",
+    down: "Down payment",
+    term: "Term",
+    months: "months",
+    monthly: "Monthly payment",
+    financed: "Financed amount",
+    margin: "Sale margin",
+    total: "Total cost",
+    marginRate: "Annual margin rate",
+    disclaimer:
+      "Simulation only and non-contractual. Final terms are set after the file is reviewed.",
+    nowSimulating: "Simulating",
+    reset: "Reset",
+  },
+  process: {
+    title: "From selection to keys",
+    steps: [
+      {
+        title: "Pick your car",
+        text: "Compare specs and indicative prices, then shortlist two or three models.",
+      },
+      {
+        title: "Check your payment",
+        text: "Set your down payment and term here until the monthly figure works for you.",
+      },
+      {
+        title: "Send your file",
+        text: "Name, wilaya, phone. We answer on WhatsApp with stock and the documents needed.",
+      },
+      {
+        title: "Take delivery",
+        text: "Sign the Mourabaha contract, collect at the showroom, or have it delivered to your wilaya.",
+      },
+    ] as [Step, Step, Step, Step],
+  },
+  lead: {
+    title: "Request a quote",
+    sub: "Four fields. Your message reaches the showroom on WhatsApp with your simulation attached.",
+    name: "Full name",
+    namePh: "Amine Belkacem",
+    wilaya: "Wilaya",
+    wilayaPh: "Choose your wilaya",
+    phone: "Phone number",
+    phonePh: "0555 12 34 56",
+    model: "Model of interest",
+    modelPh: "No preference yet",
+    submit: "Send on WhatsApp",
+    privacy: "Your message goes straight to the showroom WhatsApp.",
+    successTitle: "Your message is ready.",
+    successText:
+      "WhatsApp should have opened in a new tab. If it did not, use the button below.",
+    again: "Open WhatsApp",
+    edit: "Edit my request",
+    errors: {
+      name: "Enter your full name.",
+      wilaya: "Choose your wilaya.",
+      phone: "Enter a valid Algerian mobile (05, 06 or 07).",
+    },
+  },
+  footer: {
+    tagline: "New Chinese cars, Mourabaha financing, delivery nationwide.",
+    contact: "Contact",
+    hoursLabel: "Opening hours",
+    hours: "Saturday to Thursday, 9:00 to 18:00. Friday closed.",
+    addressLabel: "Showroom",
+    address: "Airport road, Algiers",
+    phoneLabel: "Phone",
+    brandsLabel: "Brands",
+    whatsapp: "WhatsApp",
+    legal:
+      "Prices are indicative and can change. Financing simulations are non-contractual.",
+    rights: "All rights reserved.",
+  },
+};
+
+export type Dict = typeof en;

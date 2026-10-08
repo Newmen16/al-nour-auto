@@ -1,0 +1,22 @@
+﻿@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "Cairo", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "Cairo", ui-sans-serif, system-ui, sans-serif;
+  --color-gold-50: #fdf8ea;
+  --color-gold-100: #faeec9;
+  --color-gold-200: #f7e0a0;
+  --color-gold-300: #f5cd6d;
+  --color-gold-400: #f5b942;
+  --color-gold-500: #e8a317;
+  --color-gold-600: #c7860c;
+  --color-gold-700: #9a670a;
+}
+
+html[dir="rtl"] body {
+  font-family: var(--font-arabic);
+}
+
+html[dir="ltr"] body {
+  font-family: var(--font-sans);
+}
