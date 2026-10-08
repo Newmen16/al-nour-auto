@@ -1,10 +1,17 @@
 import { useEffect, useRef } from "react";
 import { useI18n } from "../i18n/context";
+import { brandById } from "../data/cars";
+import { formatDZD } from "../lib/format";
+import type { Car } from "../types";
 import { ButtonLink } from "./Button";
 import { HeroStudio, type PointerState } from "./HeroStudio";
 
-export function Hero() {
-  const { t } = useI18n();
+interface Props {
+  car?: Car | null;
+}
+
+export function Hero({ car }: Props) {
+  const { t, lang } = useI18n();
   const sectionRef = useRef<HTMLElement>(null);
   const pointer = useRef<PointerState>({ x: 0, y: 0 });
 
@@ -39,6 +46,20 @@ export function Hero() {
         aria-hidden="true"
         className="hscrim pointer-events-none absolute inset-0 -z-[5]"
       />
+
+      <div className="pointer-events-none absolute bottom-6 end-5 z-10 max-w-[min(20rem,calc(100%-2.5rem))] rounded-[6px] border border-zinc-800 bg-zinc-950/80 px-4 py-3 backdrop-blur-md md:end-8">
+        {car ? (
+          <>
+            <p className="text-[10px] font-semibold tracking-[0.16em] text-gold-400 uppercase">
+              {brandById(car.brand)?.name}
+            </p>
+            <p className="mt-1 text-sm font-semibold text-zinc-50">{car.model}</p>
+            <p className="num mt-0.5 text-xs text-zinc-400">{formatDZD(car.price, lang)}</p>
+          </>
+        ) : (
+          <p className="text-xs leading-relaxed text-zinc-500">{t.hero.studioHint}</p>
+        )}
+      </div>
 
       <div className="relative z-10 mx-auto flex min-h-[100dvh] max-w-7xl flex-col justify-center px-5 pt-20 pb-14 md:px-8 md:pt-24">
         <div className="grid lg:grid-cols-12">

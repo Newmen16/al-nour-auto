@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { List, X } from "@phosphor-icons/react";
 import { useI18n } from "../i18n/context";
+import type { Lang } from "../types";
 import { ButtonLink } from "./Button";
 import { Logo } from "./Logo";
 
@@ -10,8 +11,14 @@ const links = [
   { href: "#process", key: "how" },
 ] as const;
 
+const langOptions: { id: Lang; label: string }[] = [
+  { id: "ar", label: "AR" },
+  { id: "en", label: "EN" },
+  { id: "fr", label: "FR" },
+];
+
 export function Nav() {
-  const { t, lang, toggleLang } = useI18n();
+  const { t, lang, setLang } = useI18n();
   const [open, setOpen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
 
@@ -45,14 +52,27 @@ export function Nav() {
         </nav>
 
         <div className="flex items-center gap-2.5">
-          <button
-            type="button"
-            onClick={toggleLang}
+          <div
+            role="group"
             aria-label={t.nav.langAria}
-            className="inline-flex h-9 items-center rounded-[6px] border border-zinc-700 px-3 text-xs font-semibold text-zinc-300 transition-colors duration-200 hover:border-gold-600 hover:text-gold-300"
+            className="inline-flex items-center rounded-[6px] border border-zinc-700 p-0.5"
           >
-            {lang === "ar" ? "EN" : "العربية"}
-          </button>
+            {langOptions.map((option) => (
+              <button
+                key={option.id}
+                type="button"
+                onClick={() => setLang(option.id)}
+                aria-pressed={lang === option.id}
+                className={`inline-flex h-8 items-center rounded-[4px] px-2.5 text-xs font-semibold transition-colors duration-200 ${
+                  lang === option.id
+                    ? "bg-gold-400 text-zinc-950"
+                    : "text-zinc-400 hover:text-zinc-200"
+                }`}
+              >
+                {option.label}
+              </button>
+            ))}
+          </div>
 
           <ButtonLink
             href="#quote"

@@ -64,12 +64,19 @@ export function LeadForm({ finance }: Props) {
     const simulation =
       lang === "ar"
         ? `المحاكاة: ${formatDZD(finance.price, "ar")}، دفعة أولى ${finance.downPct}%، ${finance.months} شهر، قسط ${formatDZD(result.monthly, "ar")}`
-        : `Simulation: ${formatDZD(finance.price, "en")}, ${finance.downPct}% down, ${finance.months} months, ${formatDZD(result.monthly, "en")} per month`;
+        : lang === "fr"
+          ? `Simulation: ${formatDZD(finance.price, "fr")}, apport ${finance.downPct}%, ${finance.months} mois, ${formatDZD(result.monthly, "fr")} par mois`
+          : `Simulation: ${formatDZD(finance.price, "en")}, ${finance.downPct}% down, ${finance.months} months, ${formatDZD(result.monthly, "en")} per month`;
 
-    const lines = [
+    const greeting =
       lang === "ar"
         ? "السلام عليكم، أريد عرض سعر من النور أوتو."
-        : "Hello, I would like a quote from Al-Nour Auto.",
+        : lang === "fr"
+          ? "Bonjour, je souhaite un devis de la part d'Al-Nour Auto."
+          : "Hello, I would like a quote from Al-Nour Auto.";
+
+    const lines = [
+      greeting,
       `${t.lead.name}: ${values.name.trim()}`,
       `${t.lead.wilaya}: ${selectedWilaya?.code} - ${selectedWilaya?.name[lang] ?? ""}`,
       `${t.lead.phone}: ${phone}`,

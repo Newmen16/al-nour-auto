@@ -1,3 +1,5 @@
+import type { Lang } from "../types";
+
 const groupFormatter = new Intl.NumberFormat("fr-FR", {
   maximumFractionDigits: 0,
 });
@@ -6,7 +8,7 @@ export function formatNumber(value: number): string {
   return groupFormatter.format(Math.round(value));
 }
 
-export function formatDZD(value: number, lang: "ar" | "en"): string {
+export function formatDZD(value: number, lang: Lang): string {
   const suffix = lang === "ar" ? "دج" : "DZD";
   return `${formatNumber(value)} ${suffix}`;
 }

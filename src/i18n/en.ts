@@ -16,7 +16,7 @@ export const en = {
     request: "Request a quote",
     menu: "Open menu",
     closeMenu: "Close menu",
-    langAria: "التبديل إلى العربية",
+    langAria: "Change language",
     brandLine: "New cars, Algerian roads",
   },
   hero: {
@@ -82,6 +82,15 @@ export const en = {
       "Simulation only and non-contractual. Final terms are set after the file is reviewed.",
     nowSimulating: "Simulating",
     reset: "Reset",
+    badge: "Islamic financing · Mourabaha",
+    duration: "Financing term",
+    acquisition: "Total acquisition",
+    financedCost: "Total financed cost",
+    perMonth: "/ month",
+    whatsapp: "Validate this simulation on WhatsApp",
+    whatsappNote: "Quick reply within 1h · Free official quote",
+    waIntro: "Hello, I am interested in Mourabaha financing for:",
+    waOutro: "Can you confirm the terms and the required documents?",
   },
   process: {
     title: "From selection to keys",
@@ -103,6 +112,20 @@ export const en = {
         text: "Sign the Mourabaha contract, collect at the showroom, or have it delivered to your wilaya.",
       },
     ] as [Step, Step, Step, Step],
+  },
+  reassure: {
+    warranty: {
+      title: "Certified 0 km vehicles",
+      text: "Every car comes with the official manufacturer warranty, full traceability and history.",
+    },
+    admin: {
+      title: "Fast administrative steps",
+      text: "We prepare your registration card, plates and bank file within 48 to 72 hours.",
+    },
+    delivery: {
+      title: "Delivery to 58 wilayas",
+      text: "We can ship your vehicle to your home or office anywhere in Algeria, safely.",
+    },
   },
   lead: {
     title: "Request a quote",

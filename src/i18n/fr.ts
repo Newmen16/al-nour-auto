@@ -1,0 +1,170 @@
+import type { Dict } from "./en";
+
+interface Step {
+  title: string;
+  text: string;
+}
+
+export const fr: Dict = {
+  meta: {
+    title: "Al-Nour Auto | Voitures chinoises neuves et financement Mourabaha en Algérie",
+    description:
+      "Geely, Chery, Jetour, Baic, Changan, DFSK. Prix indicatifs en DZD, simulateur de Mourabaha, livraison dans les 58 wilayas.",
+  },
+  nav: {
+    stock: "Stock",
+    financing: "Financement",
+    how: "Comment acheter",
+    request: "Demander un devis",
+    menu: "Ouvrir le menu",
+    closeMenu: "Fermer le menu",
+    langAria: "Changer de langue",
+    brandLine: "Voitures neuves, routes algériennes",
+  },
+  hero: {
+    headline: "Voitures chinoises neuves. Financement Mourabaha. Livraison partout.",
+    sub: "Six marques en stock, mensualités à partir d'un apport de 20% et une garantie jusqu'à cinq ans.",
+    request: "Demander un devis",
+    browse: "Voir le stock",
+    studioHint: "Bougez le curseur, le studio vous suit",
+  },
+  catalog: {
+    title: "Voitures en stock",
+    sub: "Prix indicatifs en dinars, taxes incluses, confirmés au showroom.",
+    all: "Toutes les marques",
+    sheet: "Fiche technique",
+    simulate: "Simuler la mensualité",
+    price: "Prix",
+    body: "Carrosserie",
+    dzd: "DZD",
+    count: (n: number) => `${n} modèle${n > 1 ? "s" : ""}`,
+    empty: "Aucun modèle référencé pour cette marque pour le moment.",
+    closeSheet: "Fermer la fiche technique",
+  },
+  specs: {
+    powertrain: "Motorisation",
+    practical: "Usage quotidien",
+    warranty: "Garantie",
+    engine: "Moteur",
+    power: "Puissance",
+    transmission: "Boîte",
+    fuel: "Carburant",
+    consumption: "Consommation mixte",
+    seats: "Places",
+    drivetrain: "Transmission",
+    body: "Carrosserie",
+    coverage: "Durée",
+    mileage: "Limite de kilométrage",
+    petrol: "Essence",
+    l100: "L/100 km",
+    hp: "ch",
+    years: "ans",
+    km: "km",
+    bodies: {
+      sedan: "Berline",
+      suv: "SUV",
+      "coupe-suv": "SUV coupé",
+      offroad: "Tout-terrain",
+      utility: "Utilitaire",
+    },
+  },
+  sim: {
+    title: "Simulateur de mensualité",
+    sub: "Ajustez les curseurs jusqu'à ce que la mensualité tienne dans votre budget. Le coût total reste affiché.",
+    price: "Prix du véhicule",
+    down: "Apport initial",
+    term: "Durée",
+    months: "mois",
+    monthly: "Mensualité",
+    financed: "Montant financé",
+    margin: "Marge de revente",
+    total: "Coût total",
+    marginRate: "Taux de marge annuel",
+    disclaimer:
+      "Simulation indicative et non contractuelle. Les conditions définitives sont fixées après l'étude du dossier.",
+    nowSimulating: "Simulation en cours",
+    reset: "Réinitialiser",
+    badge: "Financement islamique · Mourabaha",
+    duration: "Durée du financement",
+    acquisition: "Total acquisition",
+    financedCost: "Coût total financé",
+    perMonth: "/ mois",
+    whatsapp: "Valider cette simulation sur WhatsApp",
+    whatsappNote: "Réponse rapide sous 1h · Devis officiel gratuit",
+    waIntro: "Bonjour, je suis intéressé par le financement Mourabaha pour :",
+    waOutro: "Pouvez-vous me confirmer les modalités et les documents requis ?",
+  },
+  process: {
+    title: "Du choix aux clés",
+    steps: [
+      {
+        title: "Choisissez votre voiture",
+        text: "Comparez les fiches techniques et les prix indicatifs, puis retenez deux ou trois modèles.",
+      },
+      {
+        title: "Vérifiez votre mensualité",
+        text: "Réglez l'apport et la durée ici jusqu'à ce que la mensualité vous convienne.",
+      },
+      {
+        title: "Envoyez votre dossier",
+        text: "Nom, wilaya, téléphone. Nous répondons sur WhatsApp avec le stock et les documents demandés.",
+      },
+      {
+        title: "Réceptionnez",
+        text: "Signez le contrat de Mourabaha, récupérez la voiture au showroom ou faites-la livrer dans votre wilaya.",
+      },
+    ] as [Step, Step, Step, Step],
+  },
+  lead: {
+    title: "Demander un devis",
+    sub: "Quatre champs. Votre message part sur le WhatsApp du showroom avec votre simulation en pièce jointe.",
+    name: "Nom complet",
+    namePh: "Amine Belkacem",
+    wilaya: "Wilaya",
+    wilayaPh: "Choisissez votre wilaya",
+    phone: "Numéro de téléphone",
+    phonePh: "0555 12 34 56",
+    model: "Modèle souhaité",
+    modelPh: "Pas de préférence",
+    submit: "Envoyer sur WhatsApp",
+    privacy: "Votre message part directement sur le WhatsApp du showroom.",
+    successTitle: "Votre message est prêt.",
+    successText:
+      "WhatsApp s'est ouvert dans un nouvel onglet. Si ce n'est pas le cas, utilisez le bouton ci-dessous.",
+    again: "Ouvrir WhatsApp",
+    edit: "Modifier ma demande",
+    errors: {
+      name: "Saisissez votre nom complet.",
+      wilaya: "Choisissez votre wilaya.",
+      phone: "Saisissez un mobile algérien valide (05, 06 ou 07).",
+    },
+  },
+  reassure: {
+    warranty: {
+      title: "Véhicules certifiés 0 km",
+      text: "Chaque voiture bénéficie de la garantie constructeur officielle, avec traçabilité et historique complets.",
+    },
+    admin: {
+      title: "Démarches administratives rapides",
+      text: "Nous préparons votre carte grise, vos plaques et votre dossier bancaire sous 48 à 72 heures.",
+    },
+    delivery: {
+      title: "Livraison dans les 58 wilayas",
+      text: "Nous convoyons votre véhicule à domicile ou au bureau, partout en Algérie, en toute sécurité.",
+    },
+  },
+  footer: {
+    tagline: "Voitures chinoises neuves, financement Mourabaha, livraison partout.",
+    contact: "Contact",
+    hoursLabel: "Horaires",
+    hours: "Samedi à jeudi, 9h00 à 18h00. Vendredi fermé.",
+    addressLabel: "Showroom",
+    address: "Route de l'aéroport, Alger",
+    phoneLabel: "Téléphone",
+    brandsLabel: "Marques",
+    whatsapp: "WhatsApp",
+    legal:
+      "Les prix sont indicatifs et peuvent évoluer. Les simulations de financement sont non contractuelles.",
+    rights: "Tous droits réservés.",
+  },
+};

@@ -1,8 +1,9 @@
-export type Lang = "ar" | "en";
+export type Lang = "ar" | "en" | "fr";
 
 export interface L10n {
   ar: string;
   en: string;
+  fr: string;
 }
 
 export type BrandId = "geely" | "chery" | "jetour" | "baic" | "changan" | "dfsk";

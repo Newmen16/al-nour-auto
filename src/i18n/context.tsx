@@ -9,6 +9,7 @@
 } from "react";
 import { en, type Dict } from "./en";
 import { ar } from "./ar";
+import { fr } from "./fr";
 import type { Lang } from "../types";
 
 interface I18nValue {
@@ -26,7 +27,7 @@ const I18nContext = createContext<I18nValue | null>(null);
 function readInitialLang(): Lang {
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored === "en" || stored === "ar") return stored;
+    if (stored === "en" || stored === "ar" || stored === "fr") return stored;
   } catch {
 
   }
@@ -39,11 +40,12 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   const dir = lang === "ar" ? "rtl" : "ltr";
 
   useEffect(() => {
+    const dict = lang === "ar" ? ar : lang === "fr" ? fr : en;
     document.documentElement.lang = lang;
     document.documentElement.dir = dir;
-    document.title = lang === "ar" ? ar.meta.title : en.meta.title;
+    document.title = dict.meta.title;
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", lang === "ar" ? ar.meta.description : en.meta.description);
+    if (meta) meta.setAttribute("content", dict.meta.description);
     try {
       localStorage.setItem(STORAGE_KEY, lang);
     } catch {
@@ -53,12 +55,12 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 
   const setLang = useCallback((next: Lang) => setLangState(next), []);
   const toggleLang = useCallback(
-    () => setLangState((current) => (current === "ar" ? "en" : "ar")),
+    () => setLangState((current) => (current === "ar" ? "en" : current === "en" ? "fr" : "ar")),
     [],
   );
 
   const value = useMemo<I18nValue>(
-    () => ({ lang, dir, t: lang === "ar" ? ar : en, setLang, toggleLang }),
+    () => ({ lang, dir, t: lang === "ar" ? ar : lang === "fr" ? fr : en, setLang, toggleLang }),
     [lang, dir, setLang, toggleLang],
   );
 
